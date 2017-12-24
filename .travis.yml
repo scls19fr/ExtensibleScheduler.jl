@@ -29,6 +29,8 @@ git:
 #script:
 #  - julia -e 'Pkg.clone(pwd()); Pkg.build("ExtensibleScheduler"); Pkg.test("ExtensibleScheduler"; coverage=true)'
 after_success:
+  - julia -e 'Pkg.add("Documenter")'
+  - julia -e 'cd(Pkg.dir("ExtensibleScheduler")); include(joinpath("docs", "make.jl"))'
   # push coverage results to Coveralls
   - julia -e 'cd(Pkg.dir("ExtensibleScheduler")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
   # push coverage results to Codecov
