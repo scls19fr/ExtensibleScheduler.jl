@@ -1,5 +1,5 @@
 using Documenter
-using AdvancedScheduler
+using ExtensibleScheduler
 
 
 makedocs(
