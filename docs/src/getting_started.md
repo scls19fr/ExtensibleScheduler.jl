@@ -2,11 +2,11 @@
 
 ## Install
 
-`AdvancedScheduler` is a not a registered package.
+`ExtensibleScheduler` is a not a registered package.
 To add it to your Julia packages, simply do the following in REPL:
 
 ```julia
-Pkg.clone("https://github.com/scls19fr/AdvancedScheduler.jl")
+Pkg.clone("https://github.com/scls19fr/ExtensibleScheduler.jl")
 ```
 
 ## Usage
