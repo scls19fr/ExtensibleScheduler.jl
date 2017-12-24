@@ -21,8 +21,8 @@ function sample()
     #add(sched, action, Trigger(DateTime(2017, 12, 17, 20, 8, 5)))  # execute one time at given DateTime
     #add(sched, action, Trigger(now(Dates.UTC) - Dates.Second(5)))  # execute one time at given DateTime (misfire)
     add(sched, action, Trigger(now(Dates.UTC) + Dates.Second(5)))  # execute one time at given DateTime
-    #add(sched, action, Trigger(Dates.Time(15, 58)))  # execute one time at given Time (of current day or of next day)
-    #add(sched, action, Trigger(Seconds(5)))  # execute one time (5 seconds after being add)
+    #add(sched, action, Trigger(Dates.Time(15, 58), n=1))  # execute one time at given Time (of current day or of next day)
+    #add(sched, action, Trigger(Seconds(5), n=1))  # execute one time (5 seconds after being add)
     #add(sched, action, Trigger(tf"5s"))  # periodic job ; priority=0 by default
     run(sched)
 end
