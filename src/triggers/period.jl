@@ -1,0 +1,39 @@
+import Base: iteratorsize, HasLength, IsInfinite, length
+
+
+"""
+    PeriodTrigger(t::Dates.Time[, n=number_of_times])
+
+A trigger which should trigger a job after a given period (`DatePeriod` or `TimePeriod`)
+
+# Optional parameter
+- `n=1`: trigger once
+- `n=-1` (default): trigger every day indefinitely
+- `n=value`: trigger just a number of times
+"""
+struct FinitePeriodTrigger <: AbstractFiniteTrigger
+    td::Dates.Period
+    n::Int
+end
+
+struct InfinitePeriodTrigger <: AbstractInfiniteTrigger
+    td::Dates.Period
+end
+
+function PeriodTrigger(td; n=-1)
+    if n < 0
+        InfinitePeriodTrigger(td)
+    else
+        FinitePeriodTrigger(td, n)
+    end
+end
+
+Trigger(t::Dates.Period; kwargs...) = PeriodTrigger(t; kwargs...)
+
+function get_next_dt_fire(trigger::Union{FinitePeriodTrigger,InfinitePeriodTrigger}, dt_previous_fire, dt_now)
+    if dt_previous_fire == DateTime(0)
+        dt_now + trigger.td
+    else
+        dt_previous_fire + trigger.td
+    end
+end
