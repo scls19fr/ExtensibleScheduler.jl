@@ -17,6 +17,12 @@ mutable struct JobConfig
     JobConfig(; misfire_grace_period=Dates.Second(1)) = new(misfire_grace_period)
 end
 
+"""
+    Job(id, action, trigger, name, priority, dt_created, dt_updated, dt_next_fire, n_triggered, config)
+
+A job is an internal structure which store what Triggers action 
+should be executed when triggered.
+"""
 mutable struct Job
     id::String
     action::Action
