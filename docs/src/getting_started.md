@@ -85,6 +85,8 @@ MemoryJobStore
 Trigger
 ```
 
+#### Trigger iteration
+
 Iteration can help to know when job should be triggered.
 
 ```@docs
