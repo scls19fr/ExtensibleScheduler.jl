@@ -85,6 +85,12 @@ MemoryJobStore
 Trigger
 ```
 
+Iteration can help to know when job should be triggered.
+
+```@docs
+iterate(trigger::AbstractTrigger, dt; n=-1)
+```
+
 #### Private
 ```@docs
 InstantTrigger
