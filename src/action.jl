@@ -4,9 +4,9 @@ import Base: run
 """
     Action(func, args...; kwargs...)
 
-Action struct (functor) which can be run.
+An `Action` is a structure (a functor in fact) which stores function, arguments and keyword arguments.
 
-This structure stores function, arguments and keyword arguments.
+An `Action` can be run (in fact it's run internally by a scheduler when a `Job` is triggered.)
 """
 struct Action
     func::Function
@@ -19,6 +19,8 @@ end
 """
     run(action::Action)
 
-Run action
+Run `action`.
+
+This function shouldn't be called directly. It's called by scheduler when a job is triggered.
 """
 run(action::Action) = action.func(action.args...; action.kwargs...)

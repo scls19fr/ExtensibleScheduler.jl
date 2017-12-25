@@ -1,5 +1,9 @@
 # Getting Started
 
+```@meta
+CurrentModule = ExtensibleScheduler
+```
+
 ## Install
 
 `ExtensibleScheduler` is a not a registered package.
@@ -39,11 +43,19 @@ BlockingScheduler
 ```
 
 ```@docs
+add(sched::AbstractScheduler, action::Action, trigger::AbstractTrigger; name=DEFAULT_JOB_NAME, priority=DEFAULT_PRIORITY)
+```
+
+```@docs
 run(sched::BlockingScheduler)
 ```
 
+```@docs
+run_pending(sched::BlockingScheduler)
 ```
-add(sched::AbstractScheduler, action::Action, trigger::AbstractTrigger; name=DEFAULT_JOB_NAME, priority=DEFAULT_PRIORITY)
+
+```@docs
+shutdown(sched::BlockingScheduler)
 ```
 
 ### Action
@@ -52,13 +64,15 @@ add(sched::AbstractScheduler, action::Action, trigger::AbstractTrigger; name=DEF
 Action
 ```
 
-### Job
-
 ```@docs
-Job
+run(action::Action)
 ```
 
 ### JobStore
+
+```@docs
+AbstractJobStore
+```
 
 ```@docs
 MemoryJobStore
@@ -66,11 +80,12 @@ MemoryJobStore
 
 ### Triggers
 
+#### Triggers construction
 ```@docs
 Trigger
 ```
 
-### private
+#### Private
 ```@docs
 InstantTrigger
 ```
@@ -84,19 +99,37 @@ PeriodTrigger
 ```
 
 ```@docs
-OffsetTrigger
-```
-
-```@docs
-JitterTrigger
-```
-
-```@docs
 TimeFrameTrigger
 ```
 
 ```@docs
 CustomTrigger
+```
+
+```@docs
+NoTrigger
+```
+
+#### Triggers operations
+```@docs
+TriggerOffset
+```
+
+```@docs
+TriggerJitter
+```
+
+### Internals
+### Job
+
+```@docs
+Job
+```
+
+### Priority
+
+```@docs
+Priority
 ```
 
 ## See also

@@ -7,7 +7,7 @@ import Base: length, isempty, push!
 """
     MemoryJobStore()
 
-`MemoryJobStore` implements `JobStore`.
+`MemoryJobStore` implements `AbstractJobStore`.
 
 This is a data structure which is responsible of
 storing into memory jobs that should be executed later.

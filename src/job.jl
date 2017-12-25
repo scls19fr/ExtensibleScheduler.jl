@@ -20,8 +20,10 @@ end
 """
     Job(id, action, trigger, name, priority, dt_created, dt_updated, dt_next_fire, n_triggered, config)
 
-A job is an internal structure which store what Triggers action 
+A job is an internal structure which store what action 
 should be executed when triggered.
+
+It also store several properties such as priority level, number of time a job is triggered, when will next trigger should occur...
 """
 mutable struct Job
     id::String

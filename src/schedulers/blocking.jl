@@ -145,8 +145,8 @@ function add(sched::AbstractScheduler, action::Action, trigger::AbstractTrigger;
     push!(jobstore, job)
 end
 
-function add(sched::AbstractScheduler, action::Action, trigger; name=DEFAULT_JOB_NAME, priority=DEFAULT_PRIORITY)
-    add(sched, action, Trigger(trigger); name=name, priority=priority)
+function add(sched::AbstractScheduler, action::Action, trigger; name=DEFAULT_JOB_NAME, priority=DEFAULT_PRIORITY, n=-1)
+    add(sched, action, Trigger(trigger, n=n); name=name, priority=priority)
 end
 
 """

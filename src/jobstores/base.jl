@@ -1,7 +1,7 @@
 """
 `AbstractJobStore` is an abstract type for jobstores
 
-A `JobStore` is a data structure which is responsible of
+A jobstore is a data structure which is responsible of
 storing jobs that should be executed later.
 """
 abstract type AbstractJobStore end
