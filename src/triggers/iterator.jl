@@ -4,7 +4,7 @@ import Base: start, done, next
     iterate(trigger, dt[, n=-1])
 
 
-Iterate from instant `dt`` using trigger with a given iteration number `n`
+Iterate from instant `dt` using trigger with a given iteration number `n`
 if `n < 0` (`-1` by default), it iterates indefinitely.
 
 # Usage
