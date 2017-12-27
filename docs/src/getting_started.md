@@ -6,11 +6,11 @@ CurrentModule = ExtensibleScheduler
 
 ## Install
 
-`ExtensibleScheduler` is a not a registered package.
+`ExtensibleScheduler` is a registered package.
 To add it to your Julia packages, simply do the following in REPL:
 
 ```julia
-Pkg.clone("https://github.com/scls19fr/ExtensibleScheduler.jl")
+Pkg.add("ExtensibleScheduler")
 ```
 
 ## Usage
