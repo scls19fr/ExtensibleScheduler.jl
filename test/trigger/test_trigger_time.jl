@@ -1,4 +1,4 @@
-using Base.Test
+using Test
 using ExtensibleScheduler
 using ExtensibleScheduler: FiniteTimeTrigger, InfiniteTimeTrigger, get_next_dt_fire
 using Base: iteratorsize, HasLength, IsInfinite, length

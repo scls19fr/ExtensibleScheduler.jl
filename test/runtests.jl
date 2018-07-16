@@ -1,5 +1,5 @@
 using ExtensibleScheduler
-using Base.Test
+using Test
 
 include("test_priority.jl")
 include("test_job.jl")
