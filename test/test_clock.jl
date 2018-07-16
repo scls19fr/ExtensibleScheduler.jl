@@ -1,4 +1,4 @@
-using Base.Test
+using Test
 using ExtensibleScheduler
 using ExtensibleScheduler: real_time_clock, ClockException
 
