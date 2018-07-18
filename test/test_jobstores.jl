@@ -1,4 +1,4 @@
-using Base.Test
+using Test
 using ExtensibleScheduler
 using ExtensibleScheduler: MemoryJobStore, Job, get_job_id
 
