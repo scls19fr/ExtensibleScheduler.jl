@@ -1,4 +1,5 @@
 using Test
+using Dates: now
 using ExtensibleScheduler
 using ExtensibleScheduler: MemoryJobStore, Job, get_job_id
 

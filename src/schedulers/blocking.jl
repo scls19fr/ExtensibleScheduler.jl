@@ -1,4 +1,5 @@
-import Base: sleep, now
+import Base: sleep
+using Dates: now
 
 
 """
