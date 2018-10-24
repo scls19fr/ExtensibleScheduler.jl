@@ -122,7 +122,7 @@ if it shouldn't be fired again.
 """
 function update(jobstore::MemoryJobStore, job::Job, now_)
     job.dt_updated = now_
-    itr_size = iteratorsize(job.trigger)
+    itr_size = IteratorSize(job.trigger)
     if itr_size == HasLength()
         remaining = length(job.trigger) - job.n_triggered
         if remaining > 0

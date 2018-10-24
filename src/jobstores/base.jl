@@ -1,3 +1,6 @@
+using UUIDs
+
+
 """
 `AbstractJobStore` is an abstract type for jobstores
 
@@ -15,7 +18,7 @@ It's preferable to use `get_job_id(jobstore)` to ensure
 that a `job_id` is unique for a given `JobStore`.
 """
 function get_job_id()
-    string(Base.Random.uuid4())
+    string(UUIDs.uuid4())
 end
 
 include("memory.jl")

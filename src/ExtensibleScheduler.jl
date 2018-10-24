@@ -15,6 +15,8 @@ module ExtensibleScheduler
     export SimClock, set, NoSleep
     export iterate
 
+    using Dates
+
     include("priority.jl")
     include("clock/base.jl")
     include("action.jl")

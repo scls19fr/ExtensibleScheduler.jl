@@ -1,5 +1,6 @@
-using Base.Test
+using Test
 using ExtensibleScheduler: Priority
+using Dates
 
 @testset "Priority Tests" begin
 

@@ -1,5 +1,6 @@
 using ExtensibleScheduler
 using TimeFrames
+using Dates: now
 
 function print_time_noparam()
     println("From print_time_noparam $(now(Dates.UTC))")

@@ -1,7 +1,8 @@
-using Base.Test
+using Test
+using Dates
 using ExtensibleScheduler
 using ExtensibleScheduler: FiniteTimeTrigger, InfiniteTimeTrigger, get_next_dt_fire
-using Base: iteratorsize, HasLength, IsInfinite, length
+using Base: IteratorSize, HasLength, IsInfinite, length
 
 
 @testset "TimeTrigger" begin
@@ -16,7 +17,7 @@ using Base: iteratorsize, HasLength, IsInfinite, length
                 @test trigger isa FiniteTimeTrigger
                 @test get_next_dt_fire(trigger, dt_previous_fire, dt_now) == dt_next_fire
 
-                @test iteratorsize(trigger) == HasLength()
+                @test IteratorSize(trigger) == HasLength()
                 @test length(trigger) == 1
             end
         end
@@ -82,7 +83,7 @@ using Base: iteratorsize, HasLength, IsInfinite, length
             @test trigger isa FiniteTimeTrigger
             @test get_next_dt_fire(trigger, dt_previous_fire, dt_now) == dt_next_fire
 
-            @test iteratorsize(trigger) == HasLength()
+            @test IteratorSize(trigger) == HasLength()
             @test length(trigger) == n
         end
 
@@ -145,7 +146,7 @@ using Base: iteratorsize, HasLength, IsInfinite, length
             @test trigger isa InfiniteTimeTrigger
             @test get_next_dt_fire(trigger, dt_previous_fire, dt_now) == dt_next_fire
 
-            @test iteratorsize(trigger) == IsInfinite()
+            @test IteratorSize(trigger) == IsInfinite()
             @test_throws MethodError length(trigger)
         end
         @testset "sample" begin

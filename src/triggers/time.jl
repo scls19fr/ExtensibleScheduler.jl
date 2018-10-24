@@ -1,4 +1,4 @@
-import Base: iteratorsize, HasLength, IsInfinite, length
+import Base: IteratorSize, HasLength, IsInfinite, length
 
 
 struct FiniteTimeTrigger <: AbstractFiniteTrigger
