@@ -1,4 +1,4 @@
-import Base: start, done, next
+import Base: iterate
 
 """
     iterate(trigger, dt[, n=number_of_times])
@@ -58,20 +58,21 @@ function TriggerIterator(trigger::AbstractTrigger, dt, n)
     end
 end
 
-start(itr::AbstractTriggerIterator) = (itr.dt, 0)
-
-done(itr::InfiniteTriggerIterator, state) = false
-function done(itr::FiniteTriggerIterator, state)
-    dt_next, i = state
-    i >= itr.n
+function iterate(itr::AbstractTriggerIterator, state=(itr.dt, 0))
+    dt_now, i = state
+    i >= itr.n && return nothing
+    dt_next = get_next_dt_fire(itr.trigger, DateTime(0), dt_now)
+    i += 1
+    state = dt_next, i
+    return (dt_next, state)
 end
 
-function next(itr::AbstractTriggerIterator, state)
+function iterate(itr::InfiniteTriggerIterator, state=(itr.dt, 0))
     dt_now, i = state
     dt_next = get_next_dt_fire(itr.trigger, DateTime(0), dt_now)
     i += 1
     state = dt_next, i
-    dt_next, state
+    return (dt_next, state)
 end
 
 IteratorSize(itr::InfiniteTriggerIterator) = IsInfinite()

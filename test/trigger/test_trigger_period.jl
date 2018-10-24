@@ -1,4 +1,5 @@
 using Test
+using Dates
 using ExtensibleScheduler
 
 @testset "PeriodTrigger" begin

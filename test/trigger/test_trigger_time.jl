@@ -1,4 +1,5 @@
 using Test
+using Dates
 using ExtensibleScheduler
 using ExtensibleScheduler: FiniteTimeTrigger, InfiniteTimeTrigger, get_next_dt_fire
 using Base: IteratorSize, HasLength, IsInfinite, length
