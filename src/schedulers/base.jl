@@ -1,4 +1,4 @@
-using Random
+using UUIDs
 
 
 """
@@ -22,5 +22,5 @@ include("blocking.jl")
 Return a random identifier for a scheduler.
 """
 function get_scheduler_id()
-    string(Random.uuid4())[1:13]
+    string(UUIDs.uuid4())[1:13]
 end
