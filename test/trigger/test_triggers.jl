@@ -1,7 +1,7 @@
 using Test
 using ExtensibleScheduler
 using ExtensibleScheduler: InstantTrigger, TimeTrigger, get_next_dt_fire
-using Base: iteratorsize, HasLength, IsInfinite, length
+using Base: IteratorSize, HasLength, IsInfinite, length
 using ExtensibleScheduler: TriggerOffset
 using ExtensibleScheduler: iterate
 

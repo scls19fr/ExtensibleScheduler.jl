@@ -1,7 +1,7 @@
 using Test
 using ExtensibleScheduler
 using ExtensibleScheduler: InstantTrigger, get_next_dt_fire
-using Base: iteratorsize, HasLength, length
+using Base: IteratorSize, HasLength, length
 
 
 @testset "InstantTrigger" begin
@@ -14,7 +14,7 @@ using Base: iteratorsize, HasLength, length
         @test trigger isa InstantTrigger
         @test get_next_dt_fire(trigger, dt_previous_fire, dt_now) == dt_next_fire
 
-        @test iteratorsize(trigger) == HasLength()
+        @test IteratorSize(trigger) == HasLength()
         @test length(trigger) == 1
     end
 

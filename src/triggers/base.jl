@@ -1,4 +1,4 @@
-import Base: iteratorsize, HasLength, IsInfinite, length
+import Base: IteratorSize, HasLength, IsInfinite, length
 
 
 """
@@ -21,11 +21,11 @@ struct NoTrigger <: AbstractTrigger
 end
 
 
-function iteratorsize(trigger::AbstractFiniteTrigger)
+function IteratorSize(trigger::AbstractFiniteTrigger)
     HasLength()
 end
 
-function iteratorsize(trigger::AbstractInfiniteTrigger)
+function IteratorSize(trigger::AbstractInfiniteTrigger)
     IsInfinite()
 end
 

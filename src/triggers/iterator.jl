@@ -44,13 +44,13 @@ end
 
 function TriggerIterator(trigger::AbstractTrigger, dt, n)
     if n < 0
-        if iteratorsize(trigger) == IsInfinite()
+        if IteratorSize(trigger) == IsInfinite()
             InfiniteTriggerIterator(trigger, dt)
         else
             FiniteTriggerIterator(trigger, dt, trigger.n)
         end
     else
-        if iteratorsize(trigger) == IsInfinite()
+        if IteratorSize(trigger) == IsInfinite()
             FiniteTriggerIterator(trigger, dt, n)
         else
             FiniteTriggerIterator(trigger, dt, min(n, trigger.n))
@@ -74,7 +74,7 @@ function next(itr::AbstractTriggerIterator, state)
     dt_next, state
 end
 
-iteratorsize(itr::InfiniteTriggerIterator) = IsInfinite()
-iteratorsize(itr::FiniteTriggerIterator) = HasLength()
+IteratorSize(itr::InfiniteTriggerIterator) = IsInfinite()
+IteratorSize(itr::FiniteTriggerIterator) = HasLength()
 
 length(itr::FiniteTriggerIterator) = itr.n

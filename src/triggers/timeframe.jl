@@ -1,4 +1,4 @@
-import Base: iteratorsize, IsInfinite, length
+import Base: IteratorSize, IsInfinite, length
 
 
 using TimeFrames

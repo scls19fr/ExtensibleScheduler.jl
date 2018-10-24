@@ -1,4 +1,4 @@
-import Base: iteratorsize, HasLength, length
+import Base: IteratorSize, HasLength, length
 
 """
     InstantTrigger(dt::DateTime)
@@ -9,7 +9,7 @@ struct InstantTrigger <: AbstractTrigger
     dt_fire_at::DateTime
 end
 
-iteratorsize(trigger::InstantTrigger) = HasLength()
+IteratorSize(trigger::InstantTrigger) = HasLength()
 length(trigger::InstantTrigger) = 1
 
 
