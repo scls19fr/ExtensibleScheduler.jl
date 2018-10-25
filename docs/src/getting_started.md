@@ -141,5 +141,5 @@ Priority
 ```
 
 ## See also
- - [Sched.jl](https://github.com/scls19fr/Sched.jl) A [Julia](https://julialang.org/) events scheduler inspired by [Python sched](https://docs.python.org/3/library/sched.html).
+ - [Sched.jl](https://scls19fr.github.io/Sched.jl/latest/) A [Julia](https://julialang.org/) events scheduler inspired by [Python sched](https://docs.python.org/3/library/sched.html).
  - [https://discourse.julialang.org/t/julia-cron-like-event-scheduler/6899](https://discourse.julialang.org/t/julia-cron-like-event-scheduler/6899)
