@@ -18,21 +18,14 @@ git:
 allow_failures:
   - julia: nightly
 
-## uncomment and modify the following lines to manually install system packages
-#addons:
-#  apt: # apt-get for linux
-#    packages:
-#    - gfortran
-#before_script: # homebrew for mac
-#  - if [ $TRAVIS_OS_NAME = osx ]; then brew install gcc; fi
-
-## uncomment the following lines to override the default test script
-#script:
-#  - julia -e 'Pkg.clone(pwd()); Pkg.build("ExtensibleScheduler"); Pkg.test("ExtensibleScheduler"; coverage=true)'
-after_success:
-  - julia -e 'Pkg.add("Documenter")'
-  - julia -e 'cd(Pkg.dir("ExtensibleScheduler")); include(joinpath("docs", "make.jl"))'
-  # push coverage results to Coveralls
-  - julia -e 'cd(Pkg.dir("ExtensibleScheduler")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
-  # push coverage results to Codecov
-  - julia -e 'cd(Pkg.dir("ExtensibleScheduler")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+# https://juliadocs.github.io/Documenter.jl/latest/man/hosting/#.travis.yml-Configuration-1
+jobs:
+  include:
+    - stage: "Documentation"
+      julia: 1.0
+      os: linux
+      script:
+        - julia --project=docs/ -e 'using Pkg; Pkg.instantiate();
+                                    Pkg.develop(PackageSpec(path=pwd()))'
+        - julia --project=docs/ docs/make.jl
+      after_success: skip
