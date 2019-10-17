@@ -27,7 +27,7 @@ function sample()
     #trigger = Trigger(now(Dates.UTC) - Dates.Second(5))  # execute one time at given DateTime (misfire)
     #trigger = Trigger(now(Dates.UTC) + Dates.Second(5))  # execute one time at given DateTime
     #trigger = Trigger(Dates.Time(15, 58), n=1)  # execute one time at given Time (of current day or of next day)
-    #trigger = Trigger(Seconds(5), n=1)  # execute one time (5 seconds after being add)
+    #trigger = Trigger(Second(5), n=1)  # execute one time (5 seconds after being add)
     #trigger = Trigger(tf"5s")  # periodic job ; priority=0 by default
     
     # Add job to jobstore
